@@ -1,0 +1,112 @@
+{  
+   "tipoEntidadesClasses":[{
+            "nome": "Singular",
+            "classes": [{
+                "nome": "Potencial Cliente",
+                "codigo": "1"
+            }, {
+                "nome": "Funcionário",
+                "codigo": "2"
+            }, {
+                "nome": "Outra Entidade",
+                "codigo": "3"
+            }]
+        }, {
+            "nome": "Colectivo",
+            "classes": [{
+                "nome": "Potencial Cliente",
+                "codigo": "1"
+            }, {
+                "nome": "Banco",
+                "codigo": "4"
+            }, {
+                "nome": "Seguradora",
+                "codigo": "5"
+            }, {
+                "nome": "Resseguradora",
+                "codigo": "6"
+            }, {
+                "nome": "Outra Entidade",
+                "codigo": "7"
+            }]}],
+
+   "genero":[  
+      "Masculino",
+      "Feminino"
+   ],
+   "estadoCivil":[  
+      {  
+         "Masculino":"Solteiro",
+         "Feminino":"Solteira"
+      },
+      {  
+         "Masculino":"Casado",
+         "Feminino":"Casada"
+      },
+      {  
+         "Masculino":"Divorciado",
+         "Feminino":"Divorciada"
+      },
+      {  
+         "Masculino":"Viuvo",
+         "Feminino":"Viuva"
+      },
+      {  
+         "Masculino":"União de Facto",
+         "Feminino":"União de Facto"
+      },
+      {  
+         "Masculino":"União de Facto",
+         "Feminino":"União de Facto"
+      }
+   ],
+   "titulos":[  
+      {"genero":"Masculino", "titulo":"Srº"},
+      {"genero":"Masculino", "titulo":"Engº"},
+      {"genero":"Masculino", "titulo":"Drº"},
+      {"genero":"Feminino", "titulo":"Srª"},
+      {"genero":"Feminino", "titulo":"Engª"},
+      {"genero":"Feminino", "titulo":"Drª"}
+    ],
+
+   "situacaoProfissional":[ 
+      {"genero":"Masculino", "titulo":"Trabalhador por contra própria"},
+      {"genero":"Masculino", "titulo":"Trabalhador por contra de outrem"},
+      {"genero":"Masculino", "titulo":"Desempregado"},
+      {"genero":"Masculino", "titulo":"Reformado"},
+      {"genero":"Masculino", "titulo":"Estudante"},
+      {"genero":"Feminino", "titulo":"Trabalhadora por contra própria"},
+      {"genero":"Feminino", "titulo":"Trabalhadora por contra de outrem"},
+      {"genero":"Feminino", "titulo":"Desempregada"},
+      {"genero":"Feminino", "titulo":"Reformada"},
+      {"genero":"Feminino", "titulo":"Estudante"}],
+   "habilitacoes":[  
+      {  
+         "grau":"Sem habilitações"
+      },
+      {  
+         "grau":"Ensino primário"
+      },
+      {  
+         "grau":"Primeiro ciclo"
+      },
+      {  
+         "grau":"Segundo ciclo"
+      },
+      {  
+         "grau":"Ensino secundário"
+      },
+      {  
+         "grau":"Bacharelato"
+      },
+      {  
+         "grau":"Licenciatura"
+      },
+      {  
+         "grau":"Mestrado"
+      },
+      {  
+         "grau":"Doutoramento"
+      }
+   ]
+}

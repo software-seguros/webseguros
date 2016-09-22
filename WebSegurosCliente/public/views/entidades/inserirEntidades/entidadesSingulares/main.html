@@ -1,0 +1,37 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="#/dashboard.html">Home</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <a href="#/entidades/dashboard">User Profile</a>
+        </li>
+    </ul>
+</div>
+<h3 class="page-title">Consultar Entidade</h3>
+<div class="row" ng-controller="InserirEntidadeSingularController">
+    <div class="col-md-12">
+        <div class="profile-sidebar">
+            <div class="portlet light profile-sidebar-portlet">
+                <div class="profile-userpic">
+                    <img src="{{settings.assetsPath}}/pages/media/profile/Blank-Profile.jpg" class="img-responsive" alt=""> </div>
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name"> Nome</div>
+                    <div class="profile-usertitle-job"> Tipo de entidade {{tipoEntidadeSingularLabel}}</div>
+                    <div class="profile-usertitle-job">  {{tipoEntidadeClasseSingularLabel}}</div>
+                    <button type="button" class="btn btn-success" ng-click="">Inserir foto</button>
+                </div>
+                <div class="profile-usermenu">
+                    <h5>{{dataEntradaLabel}}</h5>
+                    <p>{{dataEntrada}}</p>
+                    <h5>{{dataActualizacaoLabel}}</h5>
+                    <p>{{dataActualizacao}}</p>
+                    <button type="button" class="btn btn-success" ng-click="" style="width:100%;">Guardar Entidade</button>
+                </div>
+            </div>
+        </div>
+        <div ui-view class="profile-content fade-in-up"> </div>
+    </div>
+</div>

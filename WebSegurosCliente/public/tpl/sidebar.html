@@ -1,0 +1,893 @@
+<div class="page-sidebar navbar-collapse collapse" ng-controller="SidebarController">
+    <ul class="page-sidebar-menu page-sidebar-menu-light" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" ng-class="{'page-sidebar-menu-closed': settings.layout.pageSidebarClosed}">
+        <li class="sidebar-toggler-wrapper hide">
+            <div class="sidebar-toggler"> </div>
+        </li>
+        <li class="sidebar-search-wrapper">
+            <form class="sidebar-search sidebar-search-bordered sidebar-search-solid" action="page_general_search_3.html" method="POST">
+                <a href="javascript:;" class="remove">
+                    <i class="icon-close"></i>
+                </a>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Procura rápida">
+                    <span class="input-group-btn">
+                                        <a href="javascript:;" class="btn submit">
+                                            <i class="icon-magnifier"></i>
+                                        </a>
+                                    </span>
+                </div>
+            </form>
+        </li>
+        <li class="nav-item start active open">
+            <a href="javascript:;" class="nav-link nav-toggle">
+                <i class="icon-home"></i>
+                <span class="title">Dashboard</span>
+                <span class="selected"></span>
+                <span class="arrow open"></span>
+            </a>
+            <ul class="sub-menu">
+                <li class="nav-item start active open">
+                    <a href="#/dashboard" class="nav-link ">
+                        <i class="icon-bar-chart"></i>
+                        <span class="title">Visão Geral</span>
+                        <span class="selected"></span>
+                    </a>
+                </li>
+                <li class="nav-item start ">
+                    <a href="#/profile/dashboard" class="nav-link ">
+                        <i class="icon-bulb"></i>
+                        <span class="title">Perfil</span>
+                        <span class="badge badge-success">1</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item start">
+            <a href="javascript:;" class="nav-link nav-toggle">
+                <i class="icon-diamond"></i>
+                <span class="title">Entidades</span>
+                <span class="arrow"></span>
+            </a>
+            <ul class="sub-menu">
+                <li class="nav-item  ">
+                    <a href="{{entidadesConsultaHref}}" class="nav-link ">
+                        <span class="title">Consultar</span>
+                    </a>
+                </li>
+                <li class="nav-item  ">
+                    <a href="{{entidadesInserirHref}}" class="nav-link ">
+                        <span class="title"">Inserir</span>
+                    </a>
+                </li>
+                <li class="nav-item  ">
+                    <a href="{{entidadesAlterarHref}}" class="nav-link ">
+                        <span class="title">Alterar</span>
+                    </a>
+                </li>
+                <li class="nav-item  ">
+                    <a href="#/entidades/anular" class="nav-link ">
+                        <span class="title">Anular</span>
+                    </a>
+                </li>
+                <li class="nav-item  ">
+                    <a href="#/entidades/reactivar" class="nav-link ">
+                        <span class="title">Reactivar</span>
+                    </a>
+                </li>
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Contactos</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Inserir </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Consultar</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Alterar </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Anular</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item start">
+            <a href="javascript:;" class="nav-link nav-toggle">
+                <i class="icon-puzzle"></i>
+                <span class="title">Cobranças</span>
+                <span class="arrow"></span>
+            </a>
+            <ul class="sub-menu">
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Recibos</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Consultar </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Co-seguro</a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <span class="title">Outras Operações</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Pedir devolução </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Devolver</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Refacturar</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Anular</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Emitir duplicado</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Gerar recibo</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Gerar estorno</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Clientes</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="" class="nav-link "> Conta Cliente </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <span class="title">Relação pagamento</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Inserir </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Consultar</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Alterar</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Anular</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Canal de distribuição</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="" class="nav-link "> Consulta de pendentes </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <span class="title">Prestação de contas</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Inserir </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Consultar</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Alterar</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Anular</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Prestação de serviços</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="" class="nav-link "> Conta prestador </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <span class="title">Prestação de contas</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Inserir </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Consultar</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Alterar</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a href="javascript:;" class="nav-link "> Anular</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Listagens</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Listagem de cobranças </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Listagem de pendentes </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item start">
+            <a href="javascript:;" class="nav-link nav-toggle">
+                <i class="icon-settings"></i>
+                <span class="title">Apólices</span>
+                <span class="arrow"></span>
+            </a>
+            <ul class="sub-menu">
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link "> Inserir </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link "> Consultar </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Alterar</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Opção Geral</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Entrada em vigor / Reemissão </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Reemitir Recibo</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Reposição de Capital</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link "> Anular </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link "> Suspender </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link "> Reabilitar </a>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Aceitação</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Consultar Pendentes</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Analisar Pendentes</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Informação Adicional</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Aprovados</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Recusados</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Histórico</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item start">
+            <a href="javascript:;" class="nav-link nav-toggle">
+                <i class="icon-bulb"></i>
+                <span class="title">Sinistros</span>
+                <span class="arrow"></span>
+            </a>
+            <ul class="sub-menu">
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Sinistros</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Inserir</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Consultar</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Alterar</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Anular</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Encerrar</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Reabrir</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Processos</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Consultar</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Alterar</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Recusar</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Encerrar</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Reabrir</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Pensões</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Alterar</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Consultar</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Extinção</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Gerar Pensões</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Consultar movimento</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Validação de Pagamentos</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Consultar</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Validar</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Recusar</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Averiguações e Peritagens</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Inserir</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Alterar</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Consultar</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link "> Contecioso</a>
+                </li>
+            </ul>
+        </li>
+    <li class="nav-item start">
+        <a href="javascript:;" class="nav-link nav-toggle">
+            <i class="icon-diamond"></i>
+            <span class="heading">Administração</span>
+            <span class="arrow"></span>
+        </a>
+        <ul class="sub-menu">
+            <li class="nav-item  ">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <span class="title">Entidades</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item ">
+                        <a href="javascript:;" class="nav-link ">Consultar</a>
+                    </li>
+                </ul>
+        </ul>
+        </li>
+        <li class="nav-item start">
+            <a href="javascript:;" class="nav-link nav-toggle">
+                <i class="icon-diamond"></i>
+                <span class="heading">Parametrizações</span>
+                <span class="arrow"></span>
+            </a>
+            <ul class="sub-menu">
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Produtos</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Produtos</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Sub-Produto</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Mini-Produto</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Definição Blocos</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Blocos</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Coberturas</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Objecto do Seguro</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Classificação do Produto</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Motivos de Anulação da Apólice</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Qualidade em que se faz o seguro</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Encargos</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Factores Tarifários</a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <span class="title">Conta de resultados</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Definição</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Clausulas</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Questionário Geral</a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <span class="title">Exame Médico</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Definição</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Modalidades</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <span class="title">Questionário Subscrição</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Definição</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Perguntas</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Resseguro</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <span class="title">Tratados de Resseguro</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Quota Parte</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Surplus</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Excess of Loss</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Afectação dos tratados</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Planos de Resseguro</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link "> Idioma</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link "> Moeda</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link "> Câmbios</a>
+                </li>
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Fraccionamento de Prémios</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link ">
+                                <span class="title">Regular</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link ">
+                                <span class="title">Customizado</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Pagamentos</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link ">
+                                <span class="title">Falta de pagamento</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Questionário Subscrição</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link ">
+                                <span class="title">Definição</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link ">
+                                <span class="title">Perguntas</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Gestão</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Sistema admninistrativo</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Sistema contabilistico</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Fiscalidade</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Taxa de IRS e Impressão de Selo</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Impostos / Cenários</a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <span class="title">Impostos, Taxas e Cargas</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Prémios</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Resgastes</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Outros</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Comercial</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Tabelas Comissão de Base</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Tabelas Factores</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Avenças</a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <span class="title">Incentivos Comerciais</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Sistemas de Incentivos</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Objectivos</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Tabelas Objectivos</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Tabelas de Variáveis</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Classificação Mediadores</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Tabelas</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Tabelas Comissão de Base</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Tabelas Factores</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Avenças</a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <span class="title">Incentivos Comerciais</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Sistemas de Incentivos</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Objectivos</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Tabelas Objectivos</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Tabelas de Variáveis</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link ">
+                                        <span class="title">Classificação Mediadores</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link "> Classificação de sinistros</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="#/parametrizacoes/cnp" class="nav-link " style="color:green;"><b>CNP</b></a>
+                </li>
+                <li class="nav-item ">
+                    <a href="#/parametrizacoes/cae" class="nav-link " style="color:green;"><b>CAE</b></a>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link "> Tipo de Prestador</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link "> Titulos de Entidades</a>
+                </li>
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Tribunais</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Comarcas</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Juizes / Advogados</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item ">
+                    <a href="javascript:;" class="nav-link "> Zonas de Cúmulos</a>
+                </li>
+                <li class="nav-item  ">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <span class="title">Segurança</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Utilizadores</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Perfil Utilizador</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Perfil Limites subscrição</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Backup</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a href="javascript:;" class="nav-link "> Import emissão</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <li class="nav-item start">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-basket"></i>
+                    <span class="title">Ajuda aplicação</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                </ul>
+            </li>
+            <li class="nav-item start">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-docs"></i>
+                    <span class="title">Comunicar problema</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                </ul>
+            </li>
+            </ul>
+            <!-- END SIDEBAR MENU -->
+</div>

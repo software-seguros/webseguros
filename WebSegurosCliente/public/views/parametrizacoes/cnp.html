@@ -1,0 +1,62 @@
+<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+  <ul class="page-breadcrumb">
+    <li>
+      <a href="#/dashboard.html">Home</a>
+      <i class="fa fa-circle"></i>
+    </li>
+    <li>
+      <a href="#">Entidades</a>
+      <i class="fa fa-circle"></i>
+    </li>
+    <li>
+      <a href="#">Alterar</a>
+    </li>
+  </ul>
+</div>
+<h3 class="page-title"> Web App Seguros </h3>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+<div ng-controller="ParametrizacoesController">
+  <div class="note note-info">
+    <h3>Classificação Nacional de Profissões
+            <span class="close" data-close="note"></span>
+        </h3>
+    <p> Descrição simples </p>
+    </p>
+  </div>
+
+  <div class="portlet box green">
+    <div class="portlet-title">
+      <div class="caption">
+        </i>Classificação Nacional de Profissões </div>
+      <div class="tools">
+        <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
+        <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
+        <a href="javascript:;" class="reload" data-original-title="" title=""> </a>
+        <a href="javascript:;" class="remove" data-original-title="" title=""> </a>
+      </div>
+    </div>
+    <div class="portlet-body flip-scroll">
+      <table class="table table-bordered table-striped table-condensed flip-content">
+        <thead class="flip-content">
+          <tr>
+            <th>Nível</th>
+            <th>Código</th>
+            <th>Designação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="dados in cnp.Root.ResultadosPesquisa.Resultado">
+            <td>{{dados.Coluna[0].__text}}</td>
+            <td>{{dados.Coluna[1].__text}}</td>
+            <td>{{dados.Coluna[2].__text}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>

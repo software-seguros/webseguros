@@ -1,0 +1,1078 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light">
+            <div class="portlet-title tabbable-line">
+                <div class="caption caption-md">
+                    <i class="icon-globe theme-font hide"></i>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#" data-target="#tab_1_1" data-toggle="tab">{{dadosGeraisLabel}}</a>
+                    </li>
+                    <li>
+                        <a href="#" data-target="#tab_1_2" data-toggle="tab">{{dadosPessoaisLabel}}</a>
+                    </li>
+                    <li>
+                        <a href="#" data-target="#tab_1_3" data-toggle="tab">{{dadosResidenciaBancariosLabel}}</a>
+                    </li>
+                    <li>
+                        <a href="#" data-target="#tab_1_4" data-toggle="tab">{{outrosDadosLabel}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="portlet-body">
+                <div class="tab-content">
+                    <!-- PERSONAL INFO TAB -->
+                    <div class="tab-pane active" id="tab_1_1">
+                        <form name="inserirEntidadeSingularForm">
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <h5>{{nomeLabel}}</h5>
+                                </div>
+                                <div class="col-md-4">
+                                    <p class="input-group">
+                                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                    </p>
+                                </div>
+                                <div class="col-md-1">
+                                    <h5>{{tituloGeneroLabel}}</h5>
+                                </div>
+                                <div class="col-md-2">
+                                    <p class="input-group">
+                                        <span class="muted-text"><select class="form-control" ng-model="generoValor" ng-options="option for option in genero"><option value="">Escolha</option></select></span>
+                                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                    </p>
+                                </div>
+                                <div class="col-md-1">
+                                    <h5>{{tituloPessoaLabel}}</h5>
+                                </div>
+                                <div class="col-md-2">
+                                    <p class="input-group">
+                                        <span class="muted-text"><select class="form-control" ng-model="tituloPessoalValor" ng-options="option.Masculino for option in tituloPessoa"><option value="">Escolha</option></select></span>
+                                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                    </p>
+                                </div>
+                                <div class="col-md-3">
+                                    <b></b>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h4><b>Dados de contacto</b></h4>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <h5>Email: </h5>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <p class="input-group">
+                                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <h5>Telemóvel: </h5>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p class="input-group">
+                                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <h5>Telefone: </h5>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p class="input-group">
+                                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h4><b>Naturalidade</b></h4>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h5>{{dataNascimentoLabel}}</h5>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="input-group">
+                                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <h5>{{paisLabel}}</h5>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p class="input-group">
+                                                <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <h5>{{distritoLabel}}</h5>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p class="input-group">
+                                                <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <h5>{{concelhoLabel}}</h5>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p class="input-group">
+                                                <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <h5>{{freguesiaLabel}}</h5>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <p class="input-group">
+                                                <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4><b>{{situacaoProfissionalLabel}}</b></h4>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h5>Situação profissional: </h5>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p class="input-group">
+                                                <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h5>Horário de contacto:</h5>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <h5>Das</h5>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p class="input-group">
+                                                <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <h5>até</h5>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p class="input-group">
+                                                <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h4><b>{{situacaoProfissionalLabel}}</b></h4>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h5>{{numeroFiscalLabel}}</h5>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p class="input-group">
+                                                <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h5>{{numeroSegurancaSocialLabel}}</h5>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p class="input-group">
+                                                <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h5>{{capLabel}}</h5>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p class="input-group">
+                                                <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h5>{{especialidadeLabel}}</h5>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p class="input-group">
+                                                <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h5>{{grauInstrucaoLabel}}</h5>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p class="input-group">
+                                                <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h5>{{areaAcademicaLabel}}</h5>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p class="input-group">
+                                                <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                                <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="tab_1_2">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>
+                                    <h4><b>{{identificacaoLabel}}</b></h4>
+                                </p>
+                                <p>
+                                    <b>{{generoLabel}}</b>Masculino
+                                </p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5>{{estadoCivilLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="input-group">
+                                            <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5>{{idiomaLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="input-group">
+                                            <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5>{{nacionalidadeLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="input-group">
+                                            <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5>{{segundaNacionalidadeLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="input-group">
+                                            <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <p>
+                                    <h4><b>Dados civis</b></h4>
+                                </p>
+                                <ul class="nav nav-pills">
+                                    <li class="active">
+                                        <a href="#" data-target="#tab_2_1" data-toggle="tab">{{cartaoCidadaoLabel}}</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" data-target="#tab_2_2" data-toggle="tab">{{bilheteIdentidadeLabel}}</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" data-target="#tab_2_3" data-toggle="tab">{{passaporteLabel}}</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" data-target="#tab_2_4" data-toggle="tab">{{cartaConducaoLabel}}</a>
+                                    </li>
+                                </ul>
+                                <hr />
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="tab_2_1">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <h5>Número de identificação civil:</h5>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p class="input-group">
+                                                    <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                    <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <h5>Data de validade:</h5>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p class="input-group">
+                                                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                    <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab_2_2">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <h5>Número de bilhete de identidade:</h5>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p class="input-group">
+                                                    <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                    <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <h5>Data de validade:</h5>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p class="input-group">
+                                                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                    <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab_2_3">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <h5>Passaporte:</h5>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p class="input-group">
+                                                    <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                    <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <h5>Data de validade:</h5>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p class="input-group">
+                                                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                    <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab_2_4">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <h5>Número da carta de condução:</h5>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p class="input-group">
+                                                    <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                    <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <h5>Data de emissão da carta de condução:</h5>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p class="input-group">
+                                                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                    <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <h5>Data de validade da carta de condução:</h5>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <p class="input-group">
+                                                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                                    <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4><b>{{filiacaoLabel}}</b></h4>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>{{nomePaiLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="input-group">
+                                            <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>{{nomeMaeLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="input-group">
+                                            <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <h4><b>{{conjugeLabel}}</b></h4>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>{{nomeConjugeLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="input-group">
+                                            <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <p>
+                                    <h4><b>Descendentes</b></h4>
+                                </p>
+                                <p><b>Descendentes</b></p>
+                                Sem filhos
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab_1_3">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <h4><b>Dados residenciais</b></h4>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>{{moradaLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="input-group">
+                                            <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>{{codigoPostalLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="input-group">
+                                            <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>{{paisLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="input-group">
+                                            <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>{{distritoLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="input-group">
+                                            <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>{{concelhoLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="input-group">
+                                            <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>{{freguesiaLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="input-group">
+                                            <span class="muted-text"><select class="form-control" ng-model="format" ng-options=""><option></option></select></span>
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <h4><b>Dados bancários</b></h4>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>{{bancoLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="input-group">
+                                            <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>{{agenciaLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="input-group">
+                                            <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>{{titularLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="input-group">
+                                            <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>{{numeroContaLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="input-group">
+                                            <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h5>{{nibLabel}}</h5>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class="input-group">
+                                            <input type="text" class="form-control" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab_1_4">
+                        <div class="portlet light">
+                            <div class="portlet-title tabbable-line">
+                                <div class="caption caption-md">
+                                    <i class="icon-globe theme-font hide"></i>
+                                    <span class="caption-subject font-blue-madison bold uppercase">Documentos</span>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <!--BEGIN TABS-->
+                                <div class="tab-content">
+                                    <div class="scroller" style="height: 100px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
+                                        <ul class="feeds">
+                                            <li>
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> Documento x
+                                                                <i class="fa fa-share"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> Dia x </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> Documento x
+                                                                <i class="fa fa-share"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> Dia x </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> Documento x
+                                                                <i class="fa fa-share"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> Dia x </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> Documento x
+                                                                <i class="fa fa-share"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> Dia x </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> Documento x
+                                                                <i class="fa fa-share"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> Dia x </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END TABS-->
+                        </div>
+                        <div class="portlet light">
+                            <div class="portlet-title tabbable-line">
+                                <div class="caption caption-md">
+                                    <i class="icon-globe theme-font hide"></i>
+                                    <span class="caption-subject font-blue-madison bold uppercase">Observações</span>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <!--BEGIN TABS-->
+                                <div class="tab-content">
+                                    <div class="scroller" style="height: 100px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
+                                        <ul class="feeds">
+                                            <li>
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> Observação x
+                                                                <i class="fa fa-share"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> Dia x </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> Observação x
+                                                                <i class="fa fa-share"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> Dia x </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> Observação x
+                                                                <i class="fa fa-share"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> Dia x </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> Observação x
+                                                                <i class="fa fa-share"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> Dia x </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> Observação x
+                                                                <i class="fa fa-share"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> Dia x </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END TABS-->
+                        </div>
+                        <div class="portlet light">
+                            <div class="portlet-title tabbable-line">
+                                <div class="caption caption-md">
+                                    <i class="icon-globe theme-font hide"></i>
+                                    <span class="caption-subject font-blue-madison bold uppercase">Confidencialidades</span>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <!--BEGIN TABS-->
+                                <div class="tab-content">
+                                    <div class="scroller" style="height: 100px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
+                                        <ul class="feeds">
+                                            <li>
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> Confidencialidade x
+                                                                <i class="fa fa-share"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> Dia x </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> Confidencialidade x
+                                                                <i class="fa fa-share"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> Dia x </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> Confidencialidade x
+                                                                <i class="fa fa-share"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> Dia x </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> Confidencialidade x
+                                                                <i class="fa fa-share"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> Dia x </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="col1">
+                                                    <div class="cont">
+                                                        <div class="cont-col1">
+                                                            <div class="label label-sm label-success">
+                                                                <i class="fa fa-bell-o"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cont-col2">
+                                                            <div class="desc"> Confidencialidade x
+                                                                <i class="fa fa-share"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col2">
+                                                    <div class="date"> Dia x </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END TABS-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

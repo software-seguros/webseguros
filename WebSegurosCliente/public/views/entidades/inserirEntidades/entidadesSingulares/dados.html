@@ -1,0 +1,706 @@
+
+<script src='bower_components/ngMask/dist/ngMask.min.js'></script>
+<!-- Template do datepicker da data de nascimento da Naturalidade -->
+<script type="text/ng-template" id="datepickerDataNascimento.html">
+    <p class="input-group">
+        <input type="text" class="form-control" datepicker-popup="" ng-model="dt1" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Fechar" show-button-bar="false" />
+        <span class="input-group-btn">
+            <button class="btn btn-default" ng-click="opendatepickerdatanascimento($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+    </p></script>
+<!-- Template do datepicker da hora inicial de contacto -->
+<script type="text/ng-template" id="datepickerHoraInicialContacto.html">
+    <p class="input-group">
+        <input type="text" class="form-control" datepicker-popup="" ng-model="dt2" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Fechar" show-button-bar="false" />
+        <span class="input-group-btn">
+            <button class="btn btn-default" ng-click="opendatepickerhorainicial($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+    </p></script>
+<!-- Template do datepicker da hora final de contacto -->
+<script type="text/ng-template" id="datepickerHoraFinalContacto.html">
+    <p class="input-group">
+        <input type="text" class="form-control" datepicker-popup="" ng-model="dt3" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Fechar" show-button-bar="false" />
+        <span class="input-group-btn">
+            <button class="btn btn-default" ng-click="opendatepickerhorafinal($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+    </p></script>
+<!-- Template de dados gerais -->
+<script type="text/ng-template" id="dadosGerais.html">
+    <form name="inserirEntidadeSingularForm">
+        <div class="row">
+            <div class="col-md-2">
+                <h5>{{labels.dadosGerais.nome}}</h5>
+            </div>
+            <div class="col-md-4">
+                <p class="input-group">
+                    <input type="text" class="form-control" id="mask_date" ng-model="entidadeSingular.dadosGerais.nome" />
+                    <span class="help-block"> d/m/y </span>                    
+                    <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                        </span>
+                </p>
+            </div>
+            <div class="col-md-1">
+                <h5>{{labels.dadosGerais.genero}}</h5>
+            </div>
+            <div class="col-md-2">
+                <p class="input-group">
+                    <span class="muted-text"><select class="form-control" ng-model="entidadeSingular.dadosGerais.genero" ng-init="preencherGeneros()" ng-options="item for item in genero"><option value="">Escolha</option></select></span>
+                    <span class="input-group-btn"><button type="button" class="btn btn-default" ng-click=""><i class="glyphicon glyphicon-search"></i></button></span>
+                </p>
+            </div>
+            <div class="col-md-1">
+                <h5>{{labels.dadosGerais.titulo}}</h5>
+            </div>
+            <div class="col-md-2">
+                <p class="input-group">
+                    <span class="muted-text"><select class="form-control" ng-model="entidadeSingular.dadosGerais.titulo" ng-init="preencherTitulos()" ng-options="item.titulo group by item.genero for item in titulos"><option value="">Escolha</option></select></span>
+                    <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <b></b>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4><b>{{labels.dadosGerais.dadosContacto.tituloDadosContacto}}</b></h4>
+                <div class="row">
+                    <div class="col-md-2">
+                        <h5>{{labels.dadosGerais.dadosContacto.email}} </h5>
+                    </div>
+                    <div class="col-md-10">
+                        <p class="input-group">
+                            <input type="text" class="form-control" type="email" name="input" ng-model="entidadeSingular.dadosGerais.dadosContacto.email" ng-focus="email.placeholder = ''" />
+                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>{{labels.dadosGerais.dadosContacto.telemovel}} </h5>
+                    </div>
+                    <div class="col-md-9">
+                        <p class="input-group">
+                            <input type="text" class="form-control" type="text" name="input" ng-model="entidadeSingular.dadosGerais.dadosContacto.telemovel" ng-focus="telemovel.placeholder = ''" />
+                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>{{labels.dadosGerais.dadosContacto.telefone}} </h5>
+                    </div>
+                    <div class="col-md-9">
+                        <p class="input-group">
+                            <input type="text" class="form-control" type="text" name="input" ng-model="entidadeSingular.dadosGerais.dadosContacto.telefone" ng-focus="telefone.placeholder = ''" />
+                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                        </p>
+                    </div>
+                </div>
+                <h4><b>{{labels.dadosGerais.naturalidade.tituloNaturalidade}}</b></h4>
+                <div class="row">
+                    <div class="col-md-5">
+                        <h5>{{labels.dadosGerais.naturalidade.dataNascimento}}</h5>
+                    </div>
+                    <div class="col-md-7">
+                        <datepickerdatanascimento ng-model="entidadeSingular.dadosGerais.naturalidade.dataNascimento" date-options="dateOptions" opened="opened" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>{{labels.dadosGerais.naturalidade.pais}}</h5>
+                    </div>
+                    <div class="col-md-9">
+                        <p class="input-group">
+                            <span class="muted-text"><select class="form-control" ng-model="entidadeSingular.dadosGerais.naturalidade.pais" ng-init="preencherPaises()" ng-options="option.name for option in paises"><option value="">Escolha</option></select></span>
+                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>{{labels.dadosGerais.naturalidade.distrito}}</h5>
+                    </div>
+                    <div class="col-md-9">
+                        <p class="input-group">
+                            <span class="muted-text"><select class="form-control" ng-model="entidadeSingular.dadosGerais.naturalidade.distrito" ng-init="preencherDistritos()" ><option value="">Escolha</option></select></span>
+                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>{{labels.dadosGerais.naturalidade.concelho}}</h5>
+                    </div>
+                    <div class="col-md-9">
+                        <p class="input-group">
+                            <span class="muted-text"><select class="form-control" ng-model="entidadeSingular.dadosGerais.naturalidade.concelho" ng-init="preencherConcelhos()" ><option value="">Escolha</option></select></span>
+                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>{{labels.dadosGerais.naturalidade.freguesia}}</h5>
+                    </div>
+                    <div class="col-md-9">
+                        <p class="input-group">
+                            <span class="muted-text"><select class="form-control" ng-model="entidadeSingular.dadosGerais.naturalidade.freguesia" ng-init="preencherFreguesias()" ><option value="">Escolha</option></select></span>
+                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h4><b>{{labels.dadosGerais.situacaoProfessional.tituloSituacaoProfessional}}</b></h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>{{labels.dadosGerais.situacaoProfessional.situacaoProfessional}}</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <p class="input-group">
+                            <span class="muted-text"><select class="form-control" ng-model="entidadeSingular.dadosGerais.situacaoProfessional.situacaoProfessional" ng-init="preencherSituacaoProfessional()" ng-options="item.titulo group by item.genero for item in situacaoProfessional"><option value="">{{SituacaoProfessionalInicial}}</option></select></span>
+                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>{{labels.dadosGerais.situacaoProfessional.horarioContacto}}</h5>
+                    </div>
+                    <div class="col-md-1">
+                        <h5>{{labels.dadosGerais.situacaoProfessional.horarioContactoDas}}</h5>
+                    </div>
+                    <div class="col-md-3">
+                        <datepickerhorainicial ng-model="entidadeSingular.dadosGerais.situacaoProfessional.horarioContactoDas" date-options="dateOptions" opened="opened" />
+                    </div>
+                    <div class="col-md-1">
+                        <h5>{{labels.dadosGerais.situacaoProfessional.horarioContactoAte}}</h5>
+                    </div>
+                    <div class="col-md-3">
+                        <datepickerhorafinal ng-model="entidadeSingular.dadosGerais.situacaoProfessional.horarioContactoAte" date-options="dateOptions" opened="opened" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>{{labels.dadosGerais.situacaoProfessional.numeroFiscal}}</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <p class="input-group">
+                            <input type="text" class="form-control" ng-model="entidadeSingular.dadosGerais.situacaoProfessional.numeroFiscal" />
+                            <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                        </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>{{labels.dadosGerais.situacaoProfessional.numeroSegurancaSocial}}</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <p class="input-group">
+                            <input type="text" class="form-control" ng-model="entidadeSingular.dadosGerais.situacaoProfessional.numeroSegurancaSocial" />
+                            <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                        </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>{{labels.dadosGerais.situacaoProfessional.cnp}}</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <p class="input-group">
+                            <!-- ng-options="item.Coluna as item.Coluna[2].__text for item in cnp"-->
+                            <span class="muted-text"><select class="form-control selectpicker" data-live-search="true"  ng-init="preencherCnp()" ><option value="">Escolha</option></select></span>
+                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>{{labels.dadosGerais.situacaoProfessional.especialidade}}</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <p class="input-group">
+                            <span class="muted-text"><select class="form-control"><option value="">Escolha</option></select></span>
+                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>{{labels.dadosGerais.situacaoProfessional.habilitacoes}}</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <p class="input-group">
+                            <span class="muted-text"><select class="form-control"><option value="">Escolha</option></select></span>
+                            <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form></script>
+<!-- Template de dados pessoais -->
+<script type="text/ng-template" id="dadosPessoais.html">
+    <div class="row">
+        <div class="col-md-6">
+            <h4><b>{{labels.dadosPessoais.dadosIdentificacao.tituloIdentificacao}}</b></h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>{{labels.dadosPessoais.dadosIdentificacao.estadoCivil}}</h5>
+                </div>
+                <div class="col-md-6">
+                    <p class="input-group">
+                        <span class="muted-text"><select class="form-control"></select></span>
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>{{labels.dadosPessoais.dadosIdentificacao.idioma}}</h5>
+                </div>
+                <div class="col-md-6">
+                    <p class="input-group">
+                        <span class="muted-text"><select class="form-control"></select></span>
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>{{labels.dadosPessoais.dadosIdentificacao.nacionalidade}}</h5>
+                </div>
+                <div class="col-md-6">
+                    <p class="input-group">
+                        <span class="muted-text"><select class="form-control"></select></span>
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>{{labels.dadosPessoais.dadosIdentificacao.segundaNacionalidade}}</h5>
+                </div>
+                <div class="col-md-6">
+                    <p class="input-group">
+                        <span class="muted-text"><select class="form-control"></select></span>
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4><b>{{labels.dadosPessoais.dadosCivis.tituloDadosCivis}}</b></h4>
+            <ul class="nav nav-pills">
+                <li class="active">
+                    <a href="#" data-target="#tab_2_1" data-toggle="tab">{{labels.dadosPessoais.dadosCivis.tabCartaoCidadao.tituloTabCartaoCidadao}}</a>
+                </li>
+                <li>
+                    <a href="#" data-target="#tab_2_2" data-toggle="tab">{{labels.dadosPessoais.dadosCivis.tabBilheteIdentidade.tituloTabBilheteIdentidade}}</a>
+                </li>
+                <li>
+                    <a href="#" data-target="#tab_2_3" data-toggle="tab">{{labels.dadosPessoais.dadosCivis.tabPassaporte.tituloTabPassaporte}}</a>
+                </li>
+                <li>
+                    <a href="#" data-target="#tab_2_4" data-toggle="tab">{{labels.dadosPessoais.dadosCivis.tabCartaConducao.tituloTabCartaConducao}}</a>
+                </li>
+            </ul>
+            <hr />
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab_2_1">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>{{labels.dadosPessoais.dadosCivis.tabCartaoCidadao.numeroIdentificacaoCivil}}</h5>
+                        </div>
+                        <div class="col-md-8">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>{{labels.dadosPessoais.dadosCivis.tabCartaoCidadao.dataValidade}}</h5>
+                        </div>
+                        <div class="col-md-8">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_2_2">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>{{labels.dadosPessoais.dadosCivis.tabBilheteIdentidade.numeroBilheteIdentidade}}</h5>
+                        </div>
+                        <div class="col-md-8">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>{{labels.dadosPessoais.dadosCivis.tabBilheteIdentidade.dataValidade}}</h5>
+                        </div>
+                        <div class="col-md-8">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_2_3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>{{labels.dadosPessoais.dadosCivis.tabPassaporte.tituloTabPassaporte}}</h5>
+                        </div>
+                        <div class="col-md-8">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>{{labels.dadosPessoais.dadosCivis.tabPassaporte.dataValidade}}</h5>
+                        </div>
+                        <div class="col-md-8">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab_2_4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>{{labels.dadosPessoais.dadosCivis.tabCartaConducao.numeroCartaConducao}}</h5>
+                        </div>
+                        <div class="col-md-8">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>{{labels.dadosPessoais.dadosCivis.tabCartaConducao.dataEmissao}}</h5>
+                        </div>
+                        <div class="col-md-8">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>{{labels.dadosPessoais.dadosCivis.tabCartaConducao.dataValidade}}</h5>
+                        </div>
+                        <div class="col-md-8">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h4><b>{{labels.dadosPessoais.dadosFiliacao.tituloDadosFilicacao}}</b></h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>{{labels.dadosPessoais.dadosFiliacao.nomeMae}}</h5>
+                </div>
+                <div class="col-md-8">
+                    <p class="input-group">
+                        <input type="text" class="form-control" is-open="popup1.opened" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>{{labels.dadosPessoais.dadosFiliacao.nomePai}}</h5>
+                </div>
+                <div class="col-md-8">
+                    <p class="input-group">
+                        <input type="text" class="form-control" is-open="popup1.opened" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+            <h4><b>{{labels.dadosPessoais.dadosConjuge.tituloDadosConjuge}}</b></h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>{{labels.dadosPessoais.dadosConjuge.nomeConjuge}}</h5>
+                </div>
+                <div class="col-md-8">
+                    <p class="input-group">
+                        <input type="text" class="form-control" is-open="popup1.opened" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <p>
+                <h4><b>{{labels.dadosPessoais.dadosDescendentes.tituloDadosDescendentes}}</b></h4>
+            </p>
+            <p><b>{{labels.dadosPessoais.dadosDescendentes.dadosDescendentes}}</b></p>
+        </div>
+    </div></script>
+<!-- Template de enderecos e dados bancarios -->
+<script type="text/ng-template" id="enderecosEdadosBancarios.html">
+    <div class="row">
+        <div class="col-md-5">
+            <h4><b>{{labels.dadosEnderecosBancarios.dadosResidenciais.tituloDadosResidenciais}}</b></h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>{{labels.dadosEnderecosBancarios.dadosResidenciais.morada}}</h5>
+                </div>
+                <div class="col-md-8">
+                    <p class="input-group">
+                        <input type="text" class="form-control" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>{{labels.dadosEnderecosBancarios.dadosResidenciais.codigoPostal}}</h5>
+                </div>
+                <div class="col-md-8">
+                    <p class="input-group">
+                        <input type="text" class="form-control" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>{{labels.dadosEnderecosBancarios.dadosResidenciais.pais}}</h5>
+                </div>
+                <div class="col-md-8">
+                    <p class="input-group">
+                        <span class="muted-text"><select class="form-control"><option></option></select></span>
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>{{labels.dadosEnderecosBancarios.dadosResidenciais.distrito}}</h5>
+                </div>
+                <div class="col-md-8">
+                    <p class="input-group">
+                        <span class="muted-text"><select class="form-control" ><option></option></select></span>
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>{{labels.dadosEnderecosBancarios.dadosResidenciais.concelho}}</h5>
+                </div>
+                <div class="col-md-8">
+                    <p class="input-group">
+                        <span class="muted-text"><select class="form-control" ><option></option></select></span>
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>{{labels.dadosEnderecosBancarios.dadosResidenciais.freguesia}}</h5>
+                </div>
+                <div class="col-md-8">
+                    <p class="input-group">
+                        <span class="muted-text"><select class="form-control"><option></option></select></span>
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-search"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <h4><b>{{labels.dadosEnderecosBancarios.dadosBancarios.tituloDadosBancarios}}</b></h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>{{labels.dadosEnderecosBancarios.dadosBancarios.nomeBanco}}</h5>
+                </div>
+                <div class="col-md-8">
+                    <p class="input-group">
+                        <input type="text" class="form-control" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>{{labels.dadosEnderecosBancarios.dadosBancarios.agencia}}</h5>
+                </div>
+                <div class="col-md-8">
+                    <p class="input-group">
+                        <input type="text" class="form-control" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>{{labels.dadosEnderecosBancarios.dadosBancarios.titular}}</h5>
+                </div>
+                <div class="col-md-8">
+                    <p class="input-group">
+                        <input type="text" class="form-control" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>{{labels.dadosEnderecosBancarios.dadosBancarios.iban}}</h5>
+                </div>
+                <div class="col-md-8">
+                    <p class="input-group">
+                        <input type="text" class="form-control" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                        <span class="input-group-btn">
+                                                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-pencil"></i></button>
+                                                </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div></script>
+<!-- Template de outros documentos -->
+<script type="text/ng-template" id="outrosDadosDocumentos.html">
+    <div class="portlet light">
+        <div class="portlet-title tabbable-line">
+            <div class="caption caption-md">
+                <i class="icon-globe theme-font hide"></i>
+                <span class="caption-subject font-blue-madison bold uppercase">{{labels.dadosOutrosDadosDocumentos.tituloDocumentos}}</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="tab-content">
+                <div class="scroller" style="height: 100px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
+                    <ul class="feeds">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portlet light">
+        <div class="portlet-title tabbable-line">
+            <div class="caption caption-md">
+                <i class="icon-globe theme-font hide"></i>
+                <span class="caption-subject font-blue-madison bold uppercase">{{labels.dadosOutrosDadosDocumentos.tituloObservacoes}}</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="tab-content">
+                <div class="scroller" style="height: 100px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
+                    <ul class="feeds">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portlet light">
+        <div class="portlet-title tabbable-line">
+            <div class="caption caption-md">
+                <i class="icon-globe theme-font hide"></i>
+                <span class="caption-subject font-blue-madison bold uppercase">{{labels.dadosOutrosDadosDocumentos.tituloConfidencialidades}}</span>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="tab-content">
+                <div class="scroller" style="height: 100px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
+                    <ul class="feeds">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div></script>
+
+<!-- view de inserir entidade singular -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light">
+            <div class="portlet-title tabbable-line">
+                <div class="caption caption-md">
+                    <i class="icon-globe theme-font hide"></i>
+                </div>
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#" data-target="#tab_1_1" data-toggle="tab">{{labels.tabDadosGerais}}</a>
+                    </li>
+                    <li>
+                        <a href="#" data-target="#tab_1_2" data-toggle="tab">{{labels.tabDadosPessoais}}</a>
+                    </li>
+                    <li>
+                        <a href="#" data-target="#tab_1_3" data-toggle="tab">{{labels.tabDadosResidenciaBancarios}}</a>
+                    </li>
+                    <li>
+                        <a href="#" data-target="#tab_1_4" data-toggle="tab">{{labels.tabOutrosDadosDocumentos}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="portlet-body">
+                <div class="tab-content" data-ng-init="pedidoDadosSelectBox()">
+                    <div class="tab-pane active" id="tab_1_1">
+                        <dadosgerais name="name"></dadosgerais>
+                    </div>
+                    <div class="tab-pane" id="tab_1_2">
+                        <dadospessoais name="name"></dadospessoais>
+                    </div>
+                    <div class="tab-pane" id="tab_1_3">
+                        <enderecos name="name"></enderecos>
+                    </div>
+                    <div class="tab-pane" id="tab_1_4">
+                        <documentos name="name"></documentos>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

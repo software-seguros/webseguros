@@ -1,0 +1,21 @@
+{
+  "name": "webseguroscliente",
+  "description": "Simple todo application.",
+  "main": "server.js",
+  "directory": "./public",
+  "authors": [
+    "Scotch"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    
+  }
+}

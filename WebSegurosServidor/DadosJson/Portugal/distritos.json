@@ -1,0 +1,118 @@
+[
+	{
+		"codigoDistrito": "1",
+		"Distrito": "Aveiro"
+	},
+	{
+		"codigoDistrito": "2",
+		"Distrito": "Beja"
+	},
+	{
+		"codigoDistrito": "3",
+		"Distrito": "Braga"
+	},
+	{
+		"codigoDistrito": "4",
+		"Distrito": "Bragança"
+	},
+	{
+		"codigoDistrito": "5",
+		"Distrito": "Castelo Branco"
+	},
+	{
+		"codigoDistrito": "6",
+		"Distrito": "Coimbra"
+	},
+	{
+		"codigoDistrito": "7",
+		"Distrito": "Évora"
+	},
+	{
+		"codigoDistrito": "8",
+		"Distrito": "Faro"
+	},
+	{
+		"codigoDistrito": "9",
+		"Distrito": "Guarda"
+	},
+	{
+		"codigoDistrito": "10",
+		"Distrito": "Leiria"
+	},
+	{
+		"codigoDistrito": "11",
+		"Distrito": "Lisboa"
+	},
+	{
+		"codigoDistrito": "12",
+		"Distrito": "Portalegre"
+	},
+	{
+		"codigoDistrito": "13",
+		"Distrito": "Porto"
+	},
+	{
+		"codigoDistrito": "14",
+		"Distrito": "Santarém"
+	},
+	{
+		"codigoDistrito": "15",
+		"Distrito": "Setúbal"
+	},
+	{
+		"codigoDistrito": "16",
+		"Distrito": "Viana do Castelo"
+	},
+	{
+		"codigoDistrito": "17",
+		"Distrito": "Vila Real"
+	},
+	{
+		"codigoDistrito": "18",
+		"Distrito": "Viseu"
+	},
+	{
+		"codigoDistrito": "31",
+		"Distrito": "Ilha da Madeira"
+	},
+	{
+		"codigoDistrito": "32",
+		"Distrito": "Ilha de Porto Santo"
+	},
+	{
+		"codigoDistrito": "41",
+		"Distrito": "Ilha de Santa Maria"
+	},
+	{
+		"codigoDistrito": "42",
+		"Distrito": "Ilha de São Miguel"
+	},
+	{
+		"codigoDistrito": "43",
+		"Distrito": "Ilha Terceira"
+	},
+	{
+		"codigoDistrito": "44",
+		"Distrito": "Ilha da Graciosa"
+	},
+	{
+		"codigoDistrito": "45",
+		"Distrito": "Ilha de São Jorge"
+	},
+	{
+		"codigoDistrito": "46",
+		"Distrito": "Ilha do Pico"
+	},
+	{
+		"codigoDistrito": "47",
+		"Distrito": "Ilha do Faial"
+	},
+	{
+		"codigoDistrito": "48",
+		"Distrito": "Ilha das Flores"
+	},
+	{
+		"codigoDistrito": "49",
+		"Distrito": "Ilha do Corvo"
+	}
+]
